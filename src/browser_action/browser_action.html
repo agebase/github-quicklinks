@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Github Quicklinks</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../../css/bootstrap.min.css">
+        <link rel="stylesheet" href="../../css/font-awesome.min.css">
+        <link rel="stylesheet" href="../../css/github-quicklinks.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <form class="form-inline" role="form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="username" placeholder="Username" required />
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="password" placeholder="Password" required />
+                        </div>
+                        <button type="submit" class="btn btn-default" id="login">Login</button>
+                    </form>
+                </div>
+            </div>
+            <div class="row orgs" data-bind="foreach: $data">
+                <div class="col-md-12">
+                    <ul class="list-group">
+                        <li class="list-group-item org single">
+                            <img data-bind="attr: { src: avatar_url }" />
+                            <strong data-bind="text: login"></strong>
+                        </li>
+                        <!-- ko foreach: repos -->
+                        <li class="list-group-item repo">
+                            <i class="fa fa-github"></i> 
+                            <a target="_blank"
+                               data-bind="text: name, attr: { href: html_url }"></a>
+                        </li>
+                        <!-- /ko -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <script src="../../js/jquery-2.0.3.min.js"></script>
+        <script src="../../js/base64.js"></script>
+        <script src="../../js/underscore-min.js"></script>
+        <script src="../../js/github.js"></script>
+        <script src="../../js/knockout-min.js"></script>
+        <script src="../../js/github-quicklinks.js"></script>
+    </body>
+</html>
